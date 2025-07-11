@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pyqe4j7neufm"]
+
+[ext_resource type="Script" uid="uid://buvdktf3x0h6f" path="res://Scripts/Global/signal_bus.gd" id="1_bvnig"]
+
+[node name="SignalBus" type="Node2D"]
+script = ExtResource("1_bvnig")

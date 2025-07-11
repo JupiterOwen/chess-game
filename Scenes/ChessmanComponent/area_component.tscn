@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1hma78b84t1n"]
+
+[ext_resource type="Script" uid="uid://dcwhx6yjhefch" path="res://Scripts/ChessmanComponent/area_component.gd" id="1_p6q55"]
+
+[node name="AreaComponent" type="Button"]
+modulate = Color(0, 0, 0, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_p6q55")

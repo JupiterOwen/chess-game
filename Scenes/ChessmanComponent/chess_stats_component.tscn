@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://45ayo81rawaj"]
+
+[ext_resource type="Script" uid="uid://6m26caaddguq" path="res://Scripts/ChessmanComponent/chess_stats_component.gd" id="1_btw1h"]
+
+[node name="ChessStatsComponent" type="Node2D"]
+script = ExtResource("1_btw1h")

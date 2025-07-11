@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://i4hdl4iexk4v"]
+
+[ext_resource type="PackedScene" uid="uid://cagldoqsriff6" path="res://Scenes/ChessmanComponent/appearance_component.tscn" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://dcpo76hydwmhf" path="res://Scripts/enemy.gd" id="1_287tu"]
+[ext_resource type="PackedScene" uid="uid://ceu4sqysrn37h" path="res://Scenes/ChessmanComponent/movement_component.tscn" id="2_287tu"]
+[ext_resource type="PackedScene" uid="uid://45ayo81rawaj" path="res://Scenes/ChessmanComponent/chess_stats_component.tscn" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://c1hma78b84t1n" path="res://Scenes/ChessmanComponent/area_component.tscn" id="5_0830c"]
+[ext_resource type="PackedScene" uid="uid://crs3o3ckofvr" path="res://Scenes/ChessmanComponent/take_component.tscn" id="6_ghaa6"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_287tu")
+
+[node name="ChessStatsComponent" parent="." instance=ExtResource("2_afpow")]
+
+[node name="AppearanceComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("1_1f0kj")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("2_287tu")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="AreaComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("5_0830c")]
+z_index = 1000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="TakeComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("6_ghaa6")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[connection signal="mouse_entered" from="AreaComponent" to="AreaComponent" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AreaComponent" to="AreaComponent" method="_on_mouse_exited"]

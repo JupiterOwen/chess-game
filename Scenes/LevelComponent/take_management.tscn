@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm7i6as4cpu42"]
+
+[ext_resource type="Script" uid="uid://bxflqf5dn7gxg" path="res://Scripts/LevelComponent/take_management.gd" id="1_cdko1"]
+
+[node name="TakeManagement" type="Node"]
+script = ExtResource("1_cdko1")

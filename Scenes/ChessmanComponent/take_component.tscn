@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crs3o3ckofvr"]
+
+[ext_resource type="Script" uid="uid://pooditop605e" path="res://Scripts/ChessmanComponent/take_component.gd" id="1_rgc8d"]
+
+[node name="TakeComponent" type="Node2D"]
+script = ExtResource("1_rgc8d")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvxesiw1wdbe4"]
+
+[ext_resource type="Script" uid="uid://5u015bk00c5i" path="res://Scripts/Abstracts/common_take_strategy.gd" id="1_usd07"]
+
+[node name="CommonTakeStrategy" type="Node"]
+script = ExtResource("1_usd07")

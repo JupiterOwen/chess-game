@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq6sdiemeny03"]
+
+[ext_resource type="PackedScene" uid="uid://45ayo81rawaj" path="res://Scenes/ChessmanComponent/chess_stats_component.tscn" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://bg0amhj0haxsy" path="res://Scripts/player.gd" id="1_vgqql"]
+[ext_resource type="PackedScene" uid="uid://ceu4sqysrn37h" path="res://Scenes/ChessmanComponent/movement_component.tscn" id="2_vgqql"]
+[ext_resource type="PackedScene" uid="uid://cagldoqsriff6" path="res://Scenes/ChessmanComponent/appearance_component.tscn" id="3_fkybt"]
+[ext_resource type="PackedScene" uid="uid://crs3o3ckofvr" path="res://Scenes/ChessmanComponent/take_component.tscn" id="6_3smsa"]
+[ext_resource type="PackedScene" uid="uid://c1hma78b84t1n" path="res://Scenes/ChessmanComponent/area_component.tscn" id="6_x3wgy"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_vgqql")
+
+[node name="ChessStatsComponent" parent="." instance=ExtResource("1_6t5aa")]
+
+[node name="AppearanceComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("3_fkybt")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("2_vgqql")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="AreaComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("6_x3wgy")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[node name="TakeComponent" parent="." node_paths=PackedStringArray("chess_stats") instance=ExtResource("6_3smsa")]
+chess_stats = NodePath("../ChessStatsComponent")
+
+[connection signal="mouse_entered" from="AreaComponent" to="." method="_on_area_component_mouse_entered"]
+[connection signal="mouse_exited" from="AreaComponent" to="." method="_on_area_component_mouse_exited"]
